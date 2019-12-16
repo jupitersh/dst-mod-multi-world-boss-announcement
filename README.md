@@ -32,6 +32,10 @@ Special thanks to [Flynn](https://steamcommunity.com/id/flynn_s) for his help of
 
 ## Changelog
 
+**List of tweaks I made for version 1.3**
+
+- Add Klaus Sack will announce upon appearing.
+
 ## License
 
 Released under the [GNU GENERAL PUBLIC LICENSE](https://www.gnu.org/licenses/gpl-3.0.en.html)
