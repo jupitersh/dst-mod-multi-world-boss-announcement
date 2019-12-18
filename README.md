@@ -6,6 +6,8 @@ This is a mod for the game of Don't Starve Together which is available in the St
 
 System announce upon boss killing and players will say how many days left before the hounds or worm attack arrive.
 
+BTW, the server will announce when someone push a fish in the Fish Scale-O-Matic.
+
 This mod is only developed for dedicated servers with multiple world(at least three shards).
 
 Do not use it if not holding a dedicated server.
@@ -31,6 +33,10 @@ If you are not holding a multi-world server, turn to this one: [Boss Announcemen
 Special thanks to [Flynn](https://steamcommunity.com/id/flynn_s) for his help of multi-language support.
 
 ## Changelog
+
+**List of tweaks I made for version 1.5.0**
+	
+	- Added announce when a fish was put in the Fish Scale-O-Matic.
 
 **List of tweaks I made for version 1.3**
 

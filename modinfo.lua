@@ -1,7 +1,7 @@
 name = "Multi-World Boss Announcement"
 description = ""
 author = "辣椒小皇纸"
-version = "1.4.2"
+version = "1.5.0"
 
 all_clients_require_mod = false
 client_only_mod = false
@@ -25,5 +25,15 @@ configuration_options =
 						{description = "FFF", data = "FFF"},
 					},
 		default = "XXX",
+	},
+	{
+		name = "is_fish_announce",
+		label = "Fish Announce",
+		hover = "",
+		options =	{
+						{description = "Yes", data = true, hover = ""},
+						{description = "No", data = false, hover = ""},
+					},
+		default = true,
 	},
 }

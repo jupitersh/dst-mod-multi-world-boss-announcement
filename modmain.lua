@@ -43,7 +43,7 @@ end
 AddPrefabPostInit("beequeenhive",function(inst)
 	inst:ListenForEvent("timerdone", function()
 		if inst:GetDisplayName() == "蜂蜜地块" or inst:GetDisplayName() == "Honey Patch" then
-			TheNet:Announce(lightbulb.."〖 "..worldname.." 〗的"..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+			TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
 		end
 	end)
 end)
@@ -51,21 +51,21 @@ end)
 --蜻蜓出现
 AddPrefabPostInit("dragonfly_spawner",function(inst)
 	inst:ListenForEvent("timerdone", function()
-		TheNet:Announce(lightbulb.."〖 "..worldname.." 〗的"..heart.."〖 "..annstring.dragonfly.." 〗"..annstring.reflash..lightbulb)
+		TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..annstring.dragonfly.." 〗"..annstring.reflash..lightbulb)
 	end)
 end)
 
 --蟾蜍菇出现
 AddPrefabPostInit("toadstool_cap",function(inst)
 	inst:ListenForEvent("ms_spawntoadstool", function()
-		TheNet:Announce(lightbulb.."〖 "..worldname.." 〗的"..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+		TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
 end)
 
 --远古大门刷新
 AddPrefabPostInit("atrium_gate",function(inst)
 	inst:ListenForEvent("timerdone", function()
 		if inst.components.trader.enabled == true then
-			TheNet:Announce(lightbulb.."〖 "..worldname.." 〗的"..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+			TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
 		end
 	end)
 end)
@@ -74,7 +74,7 @@ end)
 --禁止抄袭，特别针对是某乐
 AddPrefabPostInit("klaus_sack", function(inst)
     inst:DoTaskInTime(.5, function(inst)
-        TheNet:Announce(lightbulb.."〖 "..worldname.." 〗的"..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+        TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
     end)
 end)
 
@@ -83,9 +83,9 @@ AddPrefabPostInit("klaus", function(inst)
     local function announcement(inst, data)
     	local lastattacker = inst.components.combat and inst.components.combat.lastattacker
     	if lastattacker ~= nil then
-    		TheNet:Announce(trophy.."〖 "..worldname.." 〗的"..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilledby..heart.."〖 "..lastattacker.name.." 〗"..battle)
+    		TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilledby..heart.."〖 "..lastattacker.name.." 〗"..battle)
     	else
-    		TheNet:Announce(trophy.."〖 "..worldname.." 〗的"..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilled..battle)
+    		TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilled..battle)
     	end
     end
     local function extinction(inst)
@@ -119,9 +119,9 @@ for k, v in pairs(death_announcement) do
 		inst:ListenForEvent("death", function()
 			local lastattacker = inst.components.combat and inst.components.combat.lastattacker
 			if lastattacker ~= nil then
-				TheNet:Announce(trophy.."〖 "..worldname.." 〗的"..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilledby..heart.."〖 "..lastattacker.name.." 〗"..battle)
+				TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilledby..heart.."〖 "..lastattacker.name.." 〗"..battle)
 			else
-				TheNet:Announce(trophy.."〖 "..worldname.." 〗的"..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilled..battle)
+				TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..grave.."〖 "..inst:GetDisplayName().." 〗"..annstring.gotkilled..battle)
 			end
 		end)
 	end)
@@ -209,3 +209,55 @@ end
 
 AddPrefabPostInit("world", HoundAttack)
 AddPrefabPostInit("cave", WormAttack)
+
+--🐟宣告
+
+local function fishname(fish)
+    if lang == "zh" then
+        if fish == "oceanfish_small_1_inv" then return "小古比鱼"
+        elseif fish == "oceanfish_small_2_inv" then return "米诺鱼"
+        elseif fish == "oceanfish_small_3_inv" then return "小饵鱼"
+        elseif fish == "oceanfish_small_4_inv" then return "小鲑鱼"
+        elseif fish == "oceanfish_small_5_inv" then return "波普尔鱼"
+        elseif fish == "oceanfish_medium_1_inv" then return "泥鱼"
+        elseif fish == "oceanfish_medium_2_inv" then return "深海鲈鱼"
+        elseif fish == "oceanfish_medium_2_inv" then return "华丽狮子鱼"
+        elseif fish == "oceanfish_medium_2_inv" then return "黑鲇鱼"
+        elseif fish == "oceanfish_medium_2_inv" then return "玉米鳕鱼"
+        end
+    else
+        if fish == "oceanfish_small_1_inv" then return "Runty Guppy"
+        elseif fish == "oceanfish_small_2_inv" then return "Needlenosed Squirt"
+        elseif fish == "oceanfish_small_3_inv" then return "Bitty Baitfish"
+        elseif fish == "oceanfish_small_4_inv" then return "Smolt Fry"
+        elseif fish == "oceanfish_small_5_inv" then return "Popperfish"
+        elseif fish == "oceanfish_medium_1_inv" then return "Mudfish"
+        elseif fish == "oceanfish_medium_2_inv" then return "Deep Bass"
+        elseif fish == "oceanfish_medium_2_inv" then return "Dandy Lionfish"
+        elseif fish == "oceanfish_medium_2_inv" then return "Black Catfish"
+        elseif fish == "oceanfish_medium_2_inv" then return "Corn Cod"
+        end
+    end
+end
+
+local function fish_announce(inst)
+        inst:ListenForEvent("onnewtrophy", function()
+            if inst.components.trophyscale.item_data ~= nil then
+                local data = inst.components.trophyscale.item_data
+                local fish_owner = data.owner_name
+                local fish_weight = string.format(data.weight)
+                local fish_name = data.prefab
+                if fish_owner ~= nil and fish_weight ~= nil and fish_name ~= nil then
+                    if lang == "zh" then
+                        TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."恭喜".."〖 "..fish_owner.." 〗".."抓了一条重"..fish_weight.."盎司的".."〖 "..fishname(fish_name).." 〗"..trophy)
+                    else
+                        TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."Congratulations:".."〖 "..fish_owner.." 〗".."cought a "..fish_weight.."-ounce".."〖 "..fishname(fish_name)" 〗"..trophy)
+                    end
+                end
+            end
+        end)
+end
+
+if GetModConfigData("is_fish_announce") then
+    AddPrefabPostInit("trophyscale_fish", fish_announce)
+end
