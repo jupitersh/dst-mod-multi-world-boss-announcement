@@ -1,7 +1,7 @@
 name = "Multi-World Boss Announcement"
 description = ""
 author = "辣椒小皇纸"
-version = "1.5.0"
+version = "1.5.1"
 
 all_clients_require_mod = false
 client_only_mod = false
