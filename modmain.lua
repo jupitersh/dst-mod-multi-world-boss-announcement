@@ -59,6 +59,7 @@ end)
 AddPrefabPostInit("toadstool_cap",function(inst)
 	inst:ListenForEvent("ms_spawntoadstool", function()
 		TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+    end)
 end)
 
 --远古大门刷新
@@ -241,21 +242,21 @@ local function fishname(fish)
 end
 
 local function fish_announce(inst)
-        inst:ListenForEvent("onnewtrophy", function()
-            if inst.components.trophyscale.item_data ~= nil then
-                local data = inst.components.trophyscale.item_data
-                local fish_owner = data.owner_name
-                local fish_weight = string.format(data.weight)
-                local fish_name = data.prefab
-                if fish_owner ~= nil and fish_weight ~= nil and fish_name ~= nil and fishname(fish_name) ~= nil then
-                    if lang == "zh" then
-                        TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."恭喜".."〖 "..fish_owner.." 〗".."抓了一条重"..fish_weight.."盎司的".."〖 "..fishname(fish_name).." 〗"..trophy)
-                    else
-                        TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."Congratulations:".."〖 "..fish_owner.." 〗".."cought a "..fish_weight.."-ounce".."〖 "..fishname(fish_name)" 〗"..trophy)
-                    end
+    inst:ListenForEvent("onnewtrophy", function()
+        if inst.components.trophyscale.item_data ~= nil then
+            local data = inst.components.trophyscale.item_data
+            local fish_owner = data.owner_name
+            local fish_weight = string.format(data.weight)
+            local fish_name = data.prefab
+            if fish_owner ~= nil and fish_weight ~= nil and fish_name ~= nil and fishname(fish_name) ~= nil then
+                if lang == "zh" then
+                    TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."恭喜".."〖 "..fish_owner.." 〗".."抓了一条重"..fish_weight.."盎司的".."〖 "..fishname(fish_name).." 〗"..trophy)
+                else
+                    TheNet:Announce(trophy.."〖 "..worldname.." 〗: "..thumb.."Congratulations:".."〖 "..fish_owner.." 〗".."cought a "..fish_weight.."-ounce".."〖 "..fishname(fish_name)" 〗"..trophy)
                 end
             end
-        end)
+        end
+    end)
 end
 
 if GetModConfigData("is_fish_announce") then
