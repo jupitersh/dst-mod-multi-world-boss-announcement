@@ -79,6 +79,12 @@ AddPrefabPostInit("klaus_sack", function(inst)
     end)
 end)
 
+AddPrefabPostInit("crabking", function(inst)
+    inst:DoTaskInTime(.5, function(inst)
+        TheNet:Announce(lightbulb.."〖 "..worldname.." 〗: "..heart.."〖 "..inst:GetDisplayName().." 〗"..annstring.reflash..lightbulb)
+    end)
+end)
+
 --克劳斯击杀公告
 AddPrefabPostInit("klaus", function(inst)
     local function announcement(inst, data)
@@ -113,6 +119,7 @@ local death_announcement ={
 	--"stalker_forest",
 	"minotaur",
 	"malbatross",
+    "crabking",
 }
 
 for k, v in pairs(death_announcement) do	
@@ -212,7 +219,7 @@ AddPrefabPostInit("world", HoundAttack)
 AddPrefabPostInit("cave", WormAttack)
 
 --🐟宣告
-
+--[[
 local function fishname(fish)
     if lang == "zh" then
         if fish == "oceanfish_small_1_inv" then return "小古比鱼"
@@ -261,4 +268,4 @@ end
 
 if GetModConfigData("is_fish_announce") then
     AddPrefabPostInit("trophyscale_fish", fish_announce)
-end
+end]]
